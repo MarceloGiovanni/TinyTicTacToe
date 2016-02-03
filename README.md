@@ -1,6 +1,6 @@
 # TINY Tic Tac Toe
 
-This project was developed in back in 2004.
+This project was developed in back in 2004 for the Atmel ATTINY Circuit Cellar Contest.
 
 The Tic Tac Toe game with 3x3 dual color LED matrix, a 3x3 keypad scan, and the algorithm necessary to make the game impossible to beat, was designed to fity on an ATTINY26 AVR with 2Kb of flash.
 
