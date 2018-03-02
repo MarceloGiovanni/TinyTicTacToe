@@ -22,6 +22,6 @@ The software follows the these rules top to bottom:
   - If the opponent has marked 2 adjacent lateral middle positions: Mark the corner in between.
   - If all corners are still free (may happen if  the opponent began): Mark a random corner.
   - If you've already marked a corner: Mark an opposing free corner. 
-  - If you have the center: Mark on a line to keep the opponent busy. And prevent the opponent from winning with the tree corners move.
-  - Try to conquer 3 corners: Mark a random free corner.
+  - If you have the center: Mark on a line to keep the opponent busy. And prevent the opponent from winning with the three corners move.
+  - Try to conquer three corners: Mark a random free corner.
   -  It is going to be a tie anyway: Mark on a random free position.
