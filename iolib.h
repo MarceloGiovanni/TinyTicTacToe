@@ -26,7 +26,7 @@ extern unsigned char display_green; // green LED display
 extern unsigned char display_red;   // red LED display
 extern unsigned char display_rg_ex; // last bit red/green LED display
 
-// Keypad Scan InputFunctions
+// Keypad Scan Input Functions
 unsigned char codescan(unsigned char _key_wait_time);
 
 // I/O MAP                                         
@@ -43,9 +43,9 @@ unsigned char codescan(unsigned char _key_wait_time);
 // PB0 - ButtonR3                                                 
 // PB1 - ButtonR2                                                 
 // PB2 - ButtonR1                                                 
-// PB3 - BittpmC3                                                 
-// PB4 - BittpmC2                                                 
-// PB5 - BittpmC1                                                 
+// PB3 - ButtonC3
+// PB4 - ButtonC2
+// PB5 - ButtonC1                                                 
 // PB6 - Green_Row3                                               
 // PB7 - Reset                                                          
 

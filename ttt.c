@@ -91,14 +91,14 @@ void initgame(void) {
      play_red=0;
      play_rg_ex=0;
 
-         // Balank display buffer
+         // Blank display buffer
      display_green=0;
      display_red=0;     
      display_rg_ex=0;
 
      Display_Pre_Game();
   
-         // Balank display buffer
+         // Blank display buffer
      display_green=0;
      display_red=0;     
      display_rg_ex=0;
@@ -113,7 +113,7 @@ void initgame(void) {
 void getcomputurn(void) {
 unsigned char i=0;
 
-     //  Check if the board is empty if so, pick a corner 
+     //  Check if the board is empty; if so, pick a corner
      if ((play_red==0) && (play_green==0) && (play_rg_ex==0)){  
 
      i=TCNT0 % 4;
@@ -264,7 +264,7 @@ unsigned char i=0;
      return;
      }
         
-     // Block L winning move.
+     // Block L-shaped winning move.
  
          // !0x2 && 0x1 1x2==green
      if ((play_green & _0x1_) && (play_green & _1x2_) && !(play_green & _0x2_) && !(play_red & _0x2_)){
@@ -289,7 +289,7 @@ unsigned char i=0;
      return;
      }
       
-     //  If no L cases found and all corners are free pick a random corner 
+     //  If no L cases found and all corners are free, pick a random corner
 	 
          // 0x0 2x0 0x2 2x2 == 0 
      if (!((play_green & 0x45) || (play_red & 0x45) || (play_rg_ex))){
@@ -302,7 +302,7 @@ unsigned char i=0;
      if(i==3) { play_rg_ex |= _2o2_; return; }
      }
 
-     // if any corner is marked check for oposing corners. 
+     // If any corner is marked, check for opposing corners.
 	 
          // !2x2 && 0x0==red
      if ((play_red & _0x0_) && !(play_rg_ex)) {
@@ -328,7 +328,7 @@ unsigned char i=0;
      return;
      }
  
-     // Else pick a free center line attack to prevent defeat from the corners.
+     // Else pick a free center-line attack to prevent defeat from the corners.
 
      if (play_red & _1x1_){
 	 
@@ -354,8 +354,8 @@ unsigned char i=0;
      }
      }
     
-     // If center is lost keep the opponent busy picking a free corner if there is one.
-     // This will eventually make the 3rd corner winning move. 
+     // If center is lost, keep the opponent busy by picking a free corner if there is one.
+     // This will eventually set up a three-corner winning move.
   
      if (play_green & _1x1_){
  
@@ -380,7 +380,7 @@ unsigned char i=0;
      }
      } 
    
-     //  Else Pick a free Random place, its going to be a tie anyway.
+     //  Else pick a free random place, it's going to be a tie anyway.
      for (;;){
 
          i=TCNT0 % 9;

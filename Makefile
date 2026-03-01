@@ -1,6 +1,6 @@
 # Hey Emacs, this is a -*- makefile -*-
 #
-# WinAVR Sample makefile written by Eric B. Weddington, Jörg Wunsch, et al.
+# WinAVR Sample makefile written by Eric B. Weddington, Jï¿½rg Wunsch, et al.
 # Released to the Public Domain
 # Please read the make user manual!
 #
@@ -64,7 +64,7 @@ OPT = s
 
 
 # List any extra directories to look for include files here.
-#     Each directory must be seperated by a space.
+#     Each directory must be separated by a space.
 EXTRAINCDIRS = 
 
 
@@ -146,7 +146,7 @@ EXTMEMOPTS =
 # Linker flags.
 #  -Wl,...:     tell GCC to pass this to linker.
 #    -Map:      create map file
-#    --cref:    add cross reference to  map file
+#    --cref:    add cross reference to map file
 LDFLAGS = -Wl,-Map=$(TARGET).map,--cref
 LDFLAGS += $(EXTMEMOPTS)
 LDFLAGS += $(PRINTF_LIB) $(SCANF_LIB) $(MATH_LIB)

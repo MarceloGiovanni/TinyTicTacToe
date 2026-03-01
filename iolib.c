@@ -37,9 +37,9 @@ unsigned char Code,j,i;
      Code=0;j=0;
      
      // PORTB |= 0x7;
-	 // because this generates "LOAD PORTB / OR WITH |=0X7 / SAVE PORTB " if the display interrupt occours 
-     // after the load PORTB and before the set PORTB  it could generate a glitch on the code
-	 // so, with individual setbits everything will go flawlessly.
+	 // Because this generates "LOAD PORTB / OR WITH |=0X7 / SAVE PORTB", if the display interrupt occurs
+     // after the load PORTB and before the set PORTB, it could generate a glitch on the output.
+	 // So, with individual set bits everything will go flawlessly.
 	 
      PORTB |= (1<<PB0);
      PORTB |= (1<<PB1);
@@ -49,13 +49,13 @@ unsigned char Code,j,i;
 	
      // LOW to scan row.
      // A "switch" statement in this case generates much more code than if/clearbit.
-     // Usually with more than 6 switch options switch is a better option.
+     // Usually with more than 6 options, a switch is more efficient.
      
      if (j==0) {PORTB &= ~(1<<PB0);}
      if (j==1) {PORTB &= ~(1<<PB1);}
      if (j==2) {PORTB &= ~(1<<PB2);}
      
-     Code=3-j; // lets do this first since a NOP would be neccesary to wait for the io PORTB sync anyway. 
+     Code=3-j; // Let's do this first since a NOP would be necessary to wait for the I/O PORTB sync anyway.
      
      if (!(PINB & (1<<PINB3))) {return Code  ;}
      if (!(PINB & (1<<PINB4))) {return Code+3;}
@@ -82,7 +82,7 @@ SIGNAL(SIG_OVERFLOW0){
 volatile static unsigned char RefreshCol;
 
 // 
-//  Wait function. 
+//  Wait timer decrement.
 //
      if ( WTime > 0 ) WTime--;
 	 
@@ -116,7 +116,7 @@ volatile static unsigned char RefreshCol;
      }
 	 
 	 if(RefreshCol==2){
-	 PORTA &= ~(1<<PA7); // RED ROW0
+	 PORTA &= ~(1<<PA7); // Disable RED ROW1
 	 if(display_red   & _2x0_)PORTA &= ~(1<<PA0);
 	 if(display_red   & _2x1_)PORTA &= ~(1<<PA1);
 	 if(display_rg_ex & _2o2_)PORTA &= ~(1<<PA2);
@@ -125,7 +125,7 @@ volatile static unsigned char RefreshCol;
      }
 	 
   	 if(RefreshCol==3){
-	 PORTB &= ~(1<<PB6); // RED ROW0
+	 PORTB &= ~(1<<PB6); // Disable RED ROW2
   	 if(display_green & _0x0_)PORTA &= ~(1<<PA0);
 	 if(display_green & _0x1_)PORTA &= ~(1<<PA1);
 	 if(display_green & _0x2_)PORTA &= ~(1<<PA2);
@@ -134,7 +134,7 @@ volatile static unsigned char RefreshCol;
      }	
 	 
 	 if(RefreshCol==4){
-	 PORTA &= ~(1<<PA3); // RED ROW0
+	 PORTA &= ~(1<<PA3); // Disable GREEN ROW0
 	 if(display_green & _1x0_)PORTA &= ~(1<<PA0);
 	 if(display_green & _1x1_)PORTA &= ~(1<<PA1);
 	 if(display_green & _1x2_)PORTA &= ~(1<<PA2);
@@ -143,7 +143,7 @@ volatile static unsigned char RefreshCol;
      }	
 	 
      if(RefreshCol==5){
-	 PORTA &= ~(1<<PA4); // RED ROW0
+	 PORTA &= ~(1<<PA4); // Disable GREEN ROW1
      if(display_green & _2x0_)PORTA &= ~(1<<PA0);
 	 if(display_green & _2x1_)PORTA &= ~(1<<PA1);
 	 if(display_rg_ex & _2x2_)PORTA &= ~(1<<PA2);

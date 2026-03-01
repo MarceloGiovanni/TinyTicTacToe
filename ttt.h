@@ -53,5 +53,5 @@ void loadcheck(void);      // Loads the winning totals into the solution[] globa
 #define  _2x1_ 0x80  // 2x1
 #define  _2x2_ 0x01  // 2x2 for Green
 #define  _2o2_ 0x02  // 2x2 for Red
-#define  Its_a_tie 8 // Display its a tie
+#define  Its_a_tie 8 // Display it's a tie
 #endif

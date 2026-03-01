@@ -23,7 +23,7 @@
 // Globals 
 register unsigned char WTime asm("r9"); // Wait time
 
-// House Cleaning Functions
+// Housekeeping Functions
 void init_MCU(void);                  // Initialize the MCU
 void wait(unsigned char _wait_Time); // Wait function. 
 
